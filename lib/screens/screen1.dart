@@ -8,6 +8,7 @@ class Screen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //based on mode
       backgroundColor: Colors.white,
 
       body: SafeArea(
@@ -39,7 +40,7 @@ class Screen1 extends StatelessWidget {
                 ),
               ),
 
-              //Note : clickable text
+              //Note : This text is not clickable 
               Padding(
                 padding: const EdgeInsets.only(top: 16, bottom: 20),
                 child: Text(

@@ -1,3 +1,4 @@
+import 'package:chateo/screens/screen3.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
@@ -12,7 +13,8 @@ class Screen2 extends StatefulWidget {
 class _Screen2State extends State<Screen2> {
   final TextEditingController _phoneController = TextEditingController();
   String phoneNumber = '';
-
+  bool phoneValid =false;
+  
   @override
   void dispose() {
     _phoneController.dispose();
@@ -22,6 +24,7 @@ class _Screen2State extends State<Screen2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //based on Mode
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
@@ -64,7 +67,7 @@ class _Screen2State extends State<Screen2> {
               const SizedBox(height: 40),
               IntlPhoneField(
                 controller: _phoneController,
-                keyboardType: TextInputType.phone, // ensures numeric keyboard
+                keyboardType: TextInputType.phone, 
                 decoration: const InputDecoration(
                   labelText: 'Phone Number',
                   border: OutlineInputBorder(),
@@ -88,7 +91,12 @@ class _Screen2State extends State<Screen2> {
                     ),
                   ),
                   onPressed: () {
-                    // Your continue logic here
+                    //if the phone is valid 
+                    // todo : continue logic
+                    //Logic error here still continue after delte from true number
+                     Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>Screen3(phoneNumber: phoneNumber,)),
+                    );
                   },
                   child: Text(
                     'Continue',
