@@ -8,14 +8,11 @@ class Screen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //based on mode
       backgroundColor: Colors.white,
-
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const SizedBox(height: 70),
 
@@ -40,9 +37,9 @@ class Screen1 extends StatelessWidget {
                 ),
               ),
 
-              //Note : This text is not clickable 
+              
               Padding(
-                padding: const EdgeInsets.only(top: 16, bottom: 20),
+                padding: const EdgeInsets.only(top: 16),
                 child: Text(
                   'Terms & Privacy Policy',
                   textAlign: TextAlign.center,
@@ -53,10 +50,13 @@ class Screen1 extends StatelessWidget {
                   ),
                 ),
               ),
+
+              const Spacer(), 
+
               
               SizedBox(
                 width: double.infinity,
-                height: 52,
+                height: 50,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF002DE3),
@@ -65,14 +65,17 @@ class Screen1 extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                      Navigator.push(context,
-                      MaterialPageRoute(builder: (context)=>const Screen2()),
-                      );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Screen2(),
+                      ),
+                    );
                   },
                   child: Text(
                     'Start Messaging',
                     style: GoogleFonts.mulish(
-                      color: Colors.white70,
+                      color: Colors.white,
                       fontWeight: FontWeight.w700,
                       fontSize: 16,
                     ),
@@ -80,6 +83,7 @@ class Screen1 extends StatelessWidget {
                 ),
               ),
 
+              const SizedBox(height: 40), 
             ],
           ),
         ),
